@@ -28,6 +28,30 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.patch("/:id", getNote, async (req, res) => {
+  if (req.body.noteTitle != null) {
+    res.note.noteTitle = req.body.noteTitle;
+  }
+  if (req.body.noteBody != null) {
+    res.note.noteBody = req.body.noteBody;
+  }
+  try {
+    const updatedNote = await res.note.save();
+    res.json(updatedNote);
+  } catch (err) {
+    res.status(400).json({ message: "note not updated" });
+  }
+});
+
+router.delete("/:id", getNote, async (req, res) => {
+  try {
+    await res.note.remove();
+    res.json({ message: "deleted note." });
+  } catch (err) {
+    res.status(500).json({ message: "could not find note." });
+  }
+});
+
 async function getNote(req, res, next) {
   let note;
   try {
