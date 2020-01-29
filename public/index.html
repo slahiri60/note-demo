@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tutorial</title>
+  </head>
+  <body>
+    <h2>-RESTful API-</h2>
+    <form id="user_form">
+      <field>
+        <br />
+        <label>-GET-</label>
+        <label>note id:</label>
+        <input id="noteId" type="text" name="noteId" placeholder="note id" />
+        <button id="getButton" name="getButton" value="submit" type="submit">
+          Submit</button
+        ><br />
+      </field>
+    </form>
+    <form id="user_form_post">
+      <field>
+        <label>-POST-</label>
+        <label>note title: </label>
+        <input
+          id="noteInput"
+          type="text"
+          name="noteTitle"
+          placeholder="post title"
+        />
+        <label>note body: </label>
+        <input
+          id="bodyInput"
+          type="text"
+          name="noteBody"
+          placeholder="post body"
+        />
+        <button id="postButton" name="postButton" method="POST">
+          Create Note
+        </button>
+        <br />
+      </field>
+    </form>
+    <form id="user_form_put">
+      <field>
+        <label>-PUT-</label>
+        <label>note title: </label>
+        <input
+          id="noteInput"
+          type="text"
+          name="noteTitle"
+          placeholder="update note"
+        />
+        <label>note body: </label>
+        <input
+          id="bodyInput"
+          type="text"
+          name="noteBody"
+          placeholder="update body"
+        />
+        <label>note id: </label>
+        <input id="noteId" type="text" name="noteId" placeholder="note id" />
+        <button id="putButton" name="putButton" method="PUT">
+          Update Note</button
+        ><br />
+      </field>
+    </form>
+    <form id="user_form_delete">
+      <field>
+        <label>-DELETE-</label>
+        <label>note id: </label>
+        <input id="noteId" type="text" name="noteId" placeholder="note id" />
+        <button>Delete Note</button>
+      </field>
+    </form>
+    <h2>Notes in Database</h2>
+    <div id="results"></div>
+    <script src="./api.js"></script>
+  </body>
+</html>
